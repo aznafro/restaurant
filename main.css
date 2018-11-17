@@ -1,0 +1,12 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: steelblue;
+}
+
+/*# sourceMappingURL=main.css.map */
