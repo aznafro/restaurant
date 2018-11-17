@@ -1,0 +1,12 @@
+$blue: steelblue;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	color: $blue;
+}
