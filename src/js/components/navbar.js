@@ -6,6 +6,9 @@ const navbar = () => {
 	let navToggleIcon = document.createElement("i");
 	let navItems = [];
 
+	let screen;
+	let content;
+
 	// nav toggle
 	navToggleIcon.classList.add("fas");
 	navToggleIcon.classList.add("fa-times");
@@ -15,7 +18,13 @@ const navbar = () => {
 
 	let toggled = false;
 	navToggle.addEventListener("click", function() {
-		// this.classList.toggle("spin");
+		if(!screen) {
+			screen = document.querySelector(".screen");
+			content = document.querySelector(".content");
+		}
+
+		screen.classList.toggle("hidden");
+		content.classList.toggle("blur");
 
 		if(!toggled) {
 			this.style.animation = ".5s spinIn forwards";
@@ -28,7 +37,6 @@ const navbar = () => {
 		navItems.forEach(function(navItem) {
 			setTimeout(function() {
 				navItem.classList.toggle("nav-item-in");
-				console.log(delay + "s");
 			}, delay);
 			delay += 50;
 		});
