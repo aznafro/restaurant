@@ -1,0 +1,12 @@
+.content {
+	background: url(images/background.jpg);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 100%;
+
+	.inner-container {
+		position: relative;
+		padding: 40px 10vw;
+	}
+}

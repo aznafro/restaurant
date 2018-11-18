@@ -2,11 +2,147 @@
 *::before,
 *::after {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  color: steelblue;
+  height: 100vh;
+}
+
+body {
+  color: linen;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  display: inline-block;
+  background-color: rgba(34, 34, 34, 0.6);
+  transform: skewX(-20deg);
+}
+h1 .text, h2 .text, h3 .text, h4 .text, h5 .text, h6 .text, p .text {
+  display: inline-block;
+  padding: 5px 15px 5px 15px;
+  transform: skewX(20deg);
+}
+
+nav {
+  position: relative;
+  background-color: rgba(34, 34, 34, 0.6);
+}
+nav .nav-toggle {
+  display: inline-block;
+  padding: 7px 20px;
+  color: linen;
+}
+nav .nav-toggle:hover {
+  cursor: pointer;
+}
+nav .navbar {
+  list-style: none;
+  position: absolute;
+  width: 100%;
+  top: 44px;
+  left: -100%;
+}
+
+.fa-times {
+  font-size: 30px;
+}
+
+.nav-item {
+  position: relative;
+  left: 0;
+  background-color: rgba(34, 34, 34, 0.6);
+  transition: 0.3s;
+}
+.nav-item:not(:last-child) {
+  border-bottom: 1px solid linen;
+}
+
+.nav-link {
+  color: linen;
+  display: inline-block;
+  padding: 15px 18px;
+  font-size: 22px;
+  text-align: center;
+}
+.nav-link:hover {
+  cursor: pointer;
+}
+
+.active {
+  background-color: linen;
+  color: #222;
+}
+
+.nav-item-in {
+  left: 100%;
+}
+
+.spin {
+  transform: rotate(360deg);
+}
+
+@keyframes spinIn {
+  0% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(-320deg);
+  }
+  100% {
+    transform: rotate(-270deg);
+  }
+}
+@keyframes spinOut {
+  0% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(320deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+@media only screen and (min-width: 768px) {
+  nav {
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    width: 80%;
+    border-radius: 2px;
+  }
+  nav .navbar {
+    position: static;
+    display: flex;
+    flex-direction: row;
+  }
+  nav .nav-toggle {
+    display: none;
+  }
+
+  .nav-item {
+    left: 0;
+    background-color: unset;
+  }
+  .nav-item .nav-link {
+    padding: 30px 5vw;
+  }
+  .nav-item:not(:last-child) {
+    border-bottom: none;
+  }
+}
+.content {
+  background: url(images/background.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+.content .inner-container {
+  position: relative;
+  padding: 40px 10vw;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,12 +1,11 @@
-$blue: steelblue;
+@import "base/variables";
+@import "base/reset";
+@import "base/typography";
 
-*,
-*::before,
-*::after {
-	margin: 0;
-	box-sizing: border-box;
-}
+@import "components/navbar";
 
-body {
-	color: $blue;
-}
+@import "sections/content";
+@import "sections/home";
+@import "sections/menu";
+@import "sections/locations";
+@import "sections/contact";
