@@ -4,6 +4,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	height: 100%;
+	transition: .2s;
 	z-index: 0;
 
 	.inner-container {
@@ -11,3 +12,9 @@
 		padding: 84px 10vw;
 	}
 }
+
+@media only screen and (min-width: 768px) {
+	.content {
+		filter: blur(0px);
+	}
+} 

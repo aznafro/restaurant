@@ -14,3 +14,9 @@
 .blur {
 	filter: blur(3px);
 }
+
+@media only screen and (min-width: 768px) {
+	.screen {
+		display: none;
+	}
+}

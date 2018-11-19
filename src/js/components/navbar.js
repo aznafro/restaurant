@@ -17,7 +17,7 @@ const navbar = () => {
 	navToggle.appendChild(navToggleIcon);
 
 	let toggled = false;
-	navToggle.addEventListener("click", function() {
+	function toggle() {
 		if(!screen) {
 			screen = document.querySelector(".screen");
 			content = document.querySelector(".content");
@@ -27,9 +27,9 @@ const navbar = () => {
 		content.classList.toggle("blur");
 
 		if(!toggled) {
-			this.style.animation = ".5s spinIn forwards";
+			navToggle.style.animation = ".5s spinIn forwards";
 		} else {
-			this.style.animation = ".5s spinOut forwards";
+			navToggle.style.animation = ".5s spinOut forwards";
 		}
 		toggled = !toggled;
 
@@ -40,9 +40,9 @@ const navbar = () => {
 			}, delay);
 			delay += 50;
 		});
+	}
 
-	});
-
+	navToggle.addEventListener("click", toggle);
 	nav.appendChild(navToggle);
 
 	navBar.classList.add("navbar");
@@ -61,6 +61,9 @@ const navbar = () => {
 
 		// eventhandlers for nav clicks
 		navItem.addEventListener("click", function() {
+			if(window.innerWidth < 768) {
+				toggle();
+			}
 
 			navItems.forEach(function(otherNavItem) {
 				if(otherNavItem.textContent != navItem.textContent) {

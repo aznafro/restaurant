@@ -17,6 +17,39 @@ import contact from "./sections/contact.js";
 	let innerContainer = document.createElement("div");
 
 	// add nav
+	let navLinks = nav.querySelectorAll(".nav-link");
+	navLinks.forEach(function(link) {
+		link.addEventListener("click", function() {
+			let targetLink = link.textContent.toLowerCase();
+			let currentContent = innerContainer.querySelector("[class$=\"__section\"]");
+			let currentContentName = currentContent.getAttribute("class").split("__")[0];
+			
+			// if were clicking a link were already on, do nothing
+			if(targetLink == currentContentName) {
+				return;
+			}
+
+			currentContent.remove();
+			switch(targetLink) {
+				case "home": {
+					innerContainer.append(homeSection);
+					break;
+				}
+				case "menu": {
+					if(!menuSection) {
+						menuSection = menu();
+					}
+					innerContainer.append(homeSection);
+				}
+				case "locations": {
+
+				}
+				case "contact": {
+
+				}
+			}
+		});
+	});
 	body.appendChild(nav);
 
 	// add screen, this is used when the background gets blurred.

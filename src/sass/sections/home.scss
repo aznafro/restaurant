@@ -1,0 +1,12 @@
+.home__header,
+.home__quote {
+	display: inline-block;
+	background-color: $black-trans;
+	transform: skewX(-20deg);
+
+	.text {
+		display: inline-block;
+	    padding: 5px 15px 5px 15px;
+		transform: skewX(20deg);
+	}
+}

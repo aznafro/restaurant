@@ -1,5 +1,5 @@
 const home = () => {
-	let homeContainer = document.createElement("div");
+	let homeContainer = document.createElement("section");
 
 	let headerDiv = document.createElement("div");
 	let homeHeader = document.createElement("h1");
@@ -9,7 +9,7 @@ const home = () => {
 	let homeQuote = document.createElement("p");
 	let quoteSpan = document.createElement("span");
 
-	homeContainer.classList.add("home");
+	homeContainer.classList.add("home__section");
 
 	// add header
 	homeHeader.classList.add("home__header");
