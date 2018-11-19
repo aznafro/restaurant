@@ -1,12 +1,70 @@
+.home__section {
+	position: relative;
+	height: 100%;
+}
+
+.home__header--box,
+.home__quote--box {
+	position: absolute;
+	transform: translateX(-50%);
+}
+
+.home__header--box {
+	top: 0;
+	left: 50%;
+}
+
+.home__quote--box {
+	bottom: 20%;
+	left: 50%;
+	width: 100%;
+}
+
 .home__header,
 .home__quote {
 	display: inline-block;
+	text-align: center;
 	background-color: $black-trans;
 	transform: skewX(-20deg);
 
 	.text {
 		display: inline-block;
-	    padding: 5px 15px 5px 15px;
 		transform: skewX(20deg);
+	}
+}
+
+.home__header {
+	font-size: 80px;
+	line-height: 70px;
+	padding: 0 20px;
+	letter-spacing: 10px;
+}
+
+.home__quote {
+	font-size: 22px;
+	line-height: 27px;
+	letter-spacing: 3px;
+}
+
+@media only screen and (min-width: 768px) {
+	.home__header--box,
+	.home__quote--box {
+		transform: unset;
+	}
+
+	.home__header--box {
+		left: 5%;
+		width: 40%;
+	}
+
+	.home__quote--box {
+		bottom: 35%;
+		right: 0;
+		width: 50%;
+	}
+
+	.home__header {
+		font-size: 100px;
+		line-height: 80px;
 	}
 }
