@@ -14,17 +14,6 @@ body {
   color: linen;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  display: inline-block;
-  background-color: rgba(34, 34, 34, 0.6);
-  transform: skewX(-20deg);
-}
-h1 .text, h2 .text, h3 .text, h4 .text, h5 .text, h6 .text, p .text {
-  display: inline-block;
-  padding: 5px 15px 5px 15px;
-  transform: skewX(20deg);
-}
-
 nav {
   position: absolute;
   top: 0;
@@ -157,17 +146,41 @@ nav .navbar {
   filter: blur(3px);
 }
 
+@media only screen and (min-width: 768px) {
+  .screen {
+    display: none;
+  }
+}
 .content {
   background: url(images/background.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   height: 100%;
+  transition: 0.2s;
   z-index: 0;
 }
 .content .inner-container {
   position: relative;
   padding: 84px 10vw;
+}
+
+@media only screen and (min-width: 768px) {
+  .content {
+    filter: blur(0px);
+  }
+}
+.home__header,
+.home__quote {
+  display: inline-block;
+  background-color: rgba(34, 34, 34, 0.6);
+  transform: skewX(-20deg);
+}
+.home__header .text,
+.home__quote .text {
+  display: inline-block;
+  padding: 5px 15px 5px 15px;
+  transform: skewX(20deg);
 }
 
 /*# sourceMappingURL=main.css.map */
