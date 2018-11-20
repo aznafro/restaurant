@@ -485,6 +485,13 @@ nav .navbar {
   .address {
     padding: 30px 15px 15px 15px;
   }
+  .address__name {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  .address__add {
+    font-size: 32px;
+  }
 
   .map {
     margin-bottom: 0;
