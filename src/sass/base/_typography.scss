@@ -14,3 +14,10 @@ body {
 		transform: skewX(20deg);
 	}
 }
+
+[class$="__header"] {
+	font-size: 48px;
+	letter-spacing: 2px;
+	margin-bottom: 25px;
+	padding: 0 15px;
+}

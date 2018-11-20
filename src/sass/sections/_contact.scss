@@ -1,0 +1,45 @@
+.contact__section .row {
+	flex-direction: column;
+
+	[class^="col-"]:first-child {
+		margin-right: 0;
+	}
+}
+
+.contact__desc {
+	background-color: $black-trans;
+	border-radius: 3px;
+	padding: 20px;
+	margin-bottom: 20px;
+
+	&--text {
+		font-size: 16px;
+		letter-spacing: 1px;
+		line-height: 20px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.contact__desc,
+	.contact__form {
+		height: 47vh;
+	}
+
+	.contact__desc {
+		padding: 30px;
+
+		&--text {
+			font-size: 20px;
+			letter-spacing: 1px;
+			line-height: 27px;
+		}
+	}
+
+	.contact__section .row {
+		flex-direction: row;
+
+		[class^="col-"]:first-child {
+			margin-right: $gutter-width;
+		}
+	}
+}

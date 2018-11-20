@@ -1,0 +1,47 @@
+.contact__form {
+	height: 50vh;
+	max-width: 400px;
+	margin: 0 auto;
+
+	&--input,
+	&--textarea {
+		width: 100%;
+		border-radius: 5px;
+		padding: 10px;
+		border: 1px solid lightgray;
+		font-size: 16px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&--input {
+		margin-bottom: 10px;
+	}
+
+	&--textarea {
+		height: 150px;
+		margin-bottom: 15px;
+		resize: none;
+	}
+
+	&--button {
+		background-color: $pink;
+		border: none;
+		border-radius: 3px;
+		font-size: 20px;
+		width: 100%;
+		padding: 15px 0;
+		color: $white;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+}

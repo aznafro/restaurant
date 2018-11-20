@@ -20,7 +20,6 @@ const locations = () => {
 	let mapBox = document.createElement("div");
 
 	locBox.classList.add("row");
-	locBox.classList.add("loc__row")
 	addressBox.classList.add("col-md-1-2");
 	mapBox.classList.add("col-md-1-2");
 
