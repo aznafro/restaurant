@@ -447,11 +447,11 @@ nav .navbar {
   margin-bottom: 20px;
 }
 .address__name {
-  font-size: 32px;
-  margin-bottom: 5px;
+  font-size: 38px;
+  margin-bottom: 10px;
 }
 .address__add {
-  font-size: 24px;
+  font-size: 26px;
   line-height: 40px;
 }
 
@@ -463,7 +463,7 @@ nav .navbar {
 
 .address,
 .map {
-  height: 30vh;
+  height: 35vh;
 }
 
 .locations__section .row {
@@ -487,7 +487,6 @@ nav .navbar {
   }
   .address__name {
     font-size: 48px;
-    margin-bottom: 10px;
   }
   .address__add {
     font-size: 32px;
