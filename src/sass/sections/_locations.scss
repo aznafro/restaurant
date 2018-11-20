@@ -47,6 +47,15 @@
 
 	.address {
 		padding: 30px 15px 15px 15px;
+
+		&__name {
+			font-size: 48px;
+			margin-bottom: 10px;
+		}
+
+		&__add {
+			font-size: 32px;
+		}
 	}
 
 	.map {
