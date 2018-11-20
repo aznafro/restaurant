@@ -16,6 +16,30 @@ import contact from "./sections/contact.js";
 	let content = document.createElement("div");
 	let innerContainer = document.createElement("div");
 
+	// add window resize listener for the menu content
+	let lastSmallWindow = window.innerWidth < 768 ? true : false;
+	let thisSmallWindow = lastSmallWindow;
+	let windowWidth = window.innerWidth;
+	window.addEventListener("resize", function() {
+		if((windowWidth < 768 && window.innerWidth >= 768) || (windowWidth >= 768 && window.innerWidth < 768)) {
+			if(windowWidth < 768 && window.innerWidth >= 768) {
+				thisSmallWindow = false;
+			} else {
+				thisSmallWindow = true;
+			}
+
+			let currentContent = innerContainer.querySelector("[class$=\"__section\"]");
+			let currentContentName = currentContent.getAttribute("class").split("__")[0];
+
+			if(currentContentName == "menu") {
+				currentContent.remove();
+				innerContainer.appendChild(menuSection = menu(thisSmallWindow));
+				lastSmallWindow = thisSmallWindow;
+			}	
+		}
+		windowWidth = window.innerWidth;
+	});
+
 	// add nav
 	let navLinks = nav.querySelectorAll(".nav-link");
 	navLinks.forEach(function(link) {
@@ -29,6 +53,7 @@ import contact from "./sections/contact.js";
 				return;
 			}
 
+			// otherwise replace the current content
 			currentContent.remove();
 			switch(targetLink) {
 				case "home": {
@@ -36,8 +61,9 @@ import contact from "./sections/contact.js";
 					break;
 				}
 				case "menu": {
-					if(!menuSection) {
-						menuSection = menu();
+					if((!lastSmallWindow && thisSmallWindow) || (lastSmallWindow && !thisSmallWindow) || !menuSection) {
+						menuSection = menu(thisSmallWindow);
+						lastSmallWindow = thisSmallWindow;
 					}
 					innerContainer.appendChild(menuSection);
 					break;

@@ -17,11 +17,7 @@ let menuItems = [{
 	}
 ];
 
-let bigScreen = false;
-let currentCard = 0;
-let cards = [];
-
-function nextCard(index) {
+function nextCard(cards, currentCard, index) {
 	cards[currentCard].classList.add("fade");
 
 	currentCard = currentCard += index;
@@ -32,9 +28,12 @@ function nextCard(index) {
 	}
 
 	cards[currentCard].classList.remove("fade");
+	return currentCard;
 }
 
-const menu = () => {
+const menu = smallWindow => {
+	let cards = [];
+	let currentCard = 0;
 	let menuSection = document.createElement("section");
 	let menuHeader = document.createElement("h1");
 	let menuSpan = document.createElement("span");
@@ -48,8 +47,7 @@ const menu = () => {
 
 	let slideshow = document.createElement("div");
 
-	if(window.innerWidth >= 768) {
-		bigScreen = true;
+	if(!smallWindow) {
 		slideshow.classList.add("row");
 	} else {
 		slideshow.classList.add("slideshow");
@@ -66,10 +64,10 @@ const menu = () => {
 		rightArrow.innerHTML = "&#10095;";
 
 		leftArrow.addEventListener("click", function() {
-			nextCard(-1);
+			currentCard = nextCard(cards, currentCard, -1);
 		});
 		rightArrow.addEventListener("click", function() {
-			nextCard(1);
+			currentCard = nextCard(cards, currentCard, 1);
 		});
 
 		slideshow.appendChild(leftArrow);
@@ -104,7 +102,7 @@ const menu = () => {
 
 		cards.push(card);
 
-		if(bigScreen) {
+		if(!smallWindow) {
 			let col = document.createElement("div");
 			col.classList.add("col-1-4");
 
@@ -116,7 +114,7 @@ const menu = () => {
 	});
 
 	// keep the hiddenness of the cards in order
-	if(!bigScreen) {
+	if(smallWindow) {
 		for(let i=0; i < cards.length; i++) {
 			if(i != 0) {
 				cards[i].classList.add("fade");
