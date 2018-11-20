@@ -1,6 +1,5 @@
 body {
 	color: $white;
-	font-family: "Lora";
 }
 
 [class$="__header"],
@@ -17,6 +16,7 @@ body {
 }
 
 [class$="__header"] {
+	font-family: "Lora";
 	font-size: 48px;
 	letter-spacing: 2px;
 	margin-bottom: 25px;

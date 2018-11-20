@@ -13,7 +13,6 @@ body {
 
 body {
   color: linen;
-  font-family: "Lora";
 }
 
 [class$=__header],
@@ -30,6 +29,7 @@ body {
 }
 
 [class$=__header] {
+  font-family: "Lora";
   font-size: 48px;
   letter-spacing: 2px;
   margin-bottom: 25px;
@@ -505,7 +505,7 @@ nav .navbar {
 .contact__desc {
   background-color: rgba(34, 34, 34, 0.6);
   border-radius: 3px;
-  padding: 20px;
+  padding: 5px 20px;
   margin-bottom: 20px;
 }
 .contact__desc--text {
