@@ -35,7 +35,7 @@ function nextCard(index) {
 }
 
 const menu = () => {
-	let menuSection = document.createElement("div");
+	let menuSection = document.createElement("section");
 	let menuHeader = document.createElement("h1");
 	let menuSpan = document.createElement("span");
 
