@@ -32,20 +32,29 @@ import contact from "./sections/contact.js";
 			currentContent.remove();
 			switch(targetLink) {
 				case "home": {
-					innerContainer.append(homeSection);
+					innerContainer.appendChild(homeSection);
 					break;
 				}
 				case "menu": {
 					if(!menuSection) {
 						menuSection = menu();
 					}
-					innerContainer.append(homeSection);
+					innerContainer.appendChild(menuSection);
+					break;
 				}
 				case "locations": {
-
+					if(!locationsSection) {
+						locationsSection = locations();
+					}
+					innerContainer.appendChild(locationsSection);
+					break;
 				}
 				case "contact": {
-
+					if(!contactSection) {
+						contactSection = contact();
+					}
+					innerContainer.appendChild(contactSection);
+					break;
 				}
 			}
 		});

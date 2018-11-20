@@ -72,6 +72,8 @@ const navbar = () => {
 					otherNavItem.querySelector(".nav-link").classList.add("active");
 				}
 			});
+
+			
 		});
 		navItems.push(navItem);
 

@@ -20,19 +20,6 @@
 	width: 100%;
 }
 
-.home__header,
-.home__quote {
-	display: inline-block;
-	text-align: center;
-	background-color: $black-trans;
-	transform: skewX(-20deg);
-
-	.text {
-		display: inline-block;
-		transform: skewX(20deg);
-	}
-}
-
 .home__header {
 	font-size: 80px;
 	line-height: 70px;

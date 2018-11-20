@@ -1,0 +1,94 @@
+.card {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: .4s;
+
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+
+	&__overlay {
+		position: absolute;
+		width: 100%;
+		padding: 15px;
+		bottom: 0;
+		z-index: 2;
+	}
+
+	&__name {
+		margin-bottom: 10px;
+		font-size: 53px;
+		letter-spacing: 3px;
+	}
+
+	&__desc {
+		font-size: 20px;
+		letter-spacing: 2px;
+	}
+}
+
+.card::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+@media only screen and (min-width: 768px) {
+	.card {
+		position: relative;
+		border-radius: 5px;
+		border: 1px solid $white;
+		height: 300px;
+		padding: 5px;
+		background-color: $black-trans;
+
+		&__img {
+			position: static;
+			height: 100%;
+			transition: .2s;
+		}
+
+		&__overlay {
+			opacity: 0;
+			bottom: unset;
+			top: 50%;
+			left: 50%;
+			padding: 15px;
+			width: 100%;
+			transition: .2s;
+			transform: translate(-50%, -50%);
+		}
+
+		&__name {
+			font-size: 28px;
+			letter-spacing: 1px;
+		}
+
+		&__desc {
+			line-height: 25px;
+		}
+
+		&:hover {
+			cursor: pointer;
+
+			.card__img {
+				filter: blur(2px) brightness(50%);
+			}
+
+			.card__overlay {
+				opacity: 1;
+			}
+		}
+	}
+}

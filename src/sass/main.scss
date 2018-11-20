@@ -4,8 +4,12 @@
 
 @import "components/navbar";
 @import "components/screen";
+@import "components/slideshow";
+@import "components/card";
 
-@import "sections/content";
+@import "layout/content";
+@import "layout/grid";
+
 @import "sections/home";
 @import "sections/menu";
 @import "sections/locations";

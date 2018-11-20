@@ -1,0 +1,16 @@
+body {
+	color: $white;
+}
+
+[class$="__header"],
+[class$="__quote"] {
+	display: inline-block;
+	text-align: center;
+	background-color: $black-trans;
+	transform: skewX(-20deg);
+
+	.text {
+		display: inline-block;
+		transform: skewX(20deg);
+	}
+}
