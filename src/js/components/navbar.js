@@ -32,7 +32,7 @@ const navbar = () => {
 			navToggle.style.animation = ".5s spinOut forwards";
 		}
 		toggled = !toggled;
-
+ 
 		let delay = 0;
 		navItems.forEach(function(navItem) {
 			setTimeout(function() {
@@ -42,7 +42,18 @@ const navbar = () => {
 		});
 	}
 
-	navToggle.addEventListener("click", toggle);
+	navToggle.addEventListener("click", function(e) {
+		e.stopPropagation();
+		toggle();
+	});
+	document.body.addEventListener("click", function() {
+		if(window.innerWidth < 768 && toggled) {
+			toggle();
+		}
+	});
+	nav.addEventListener("click", function(e) {
+		e.stopPropagation();
+	});
 	nav.appendChild(navToggle);
 
 	navBar.classList.add("navbar");
